@@ -146,7 +146,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
-    return listSize
+    return this.listSize
   }
 
   /**
