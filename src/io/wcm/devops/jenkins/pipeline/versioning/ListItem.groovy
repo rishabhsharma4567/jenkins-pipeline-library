@@ -40,7 +40,7 @@ class ListItem implements List, Item, Serializable {
   @NonCPS
   int compareTo(Item item) {
     if (item == null) {
-      if (this.size() == 0) {
+      if (this.list.size() == 0) {
         return 0 // 1-0 = 1- (normalize) = 1
       }
       Item first = get(0)
@@ -85,13 +85,13 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean isNull() {
-    return (this.size() == 0)
+    return (this.list.size() == 0)
   }
 
   @NonCPS
   void normalize() {
-    for (int i = this.size() - 1; i >= 0; i--) {
-      Item lastItem = get(i)
+    for (int i = this.list.size() - 1; i >= 0; i--) {
+      Item lastItem = this.list.get(i)
 
       if (lastItem.isNull()) {
         // remove null trailing items: 0, "", empty list
@@ -144,6 +144,7 @@ class ListItem implements List, Item, Serializable {
    * Adapter function for internal list object
    */
   @Override
+  @NonCPS
   int size() {
     return this.listSize
   }
