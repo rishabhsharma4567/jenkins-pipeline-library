@@ -144,12 +144,11 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
-    return this.internalSize()
-  }
-
-  @NonCPS
-  int internalSize() {
-    return this.list.size()
+    int ret = 0
+    this.list.each {
+      ret++
+    }
+    return ret
   }
 
   /**
