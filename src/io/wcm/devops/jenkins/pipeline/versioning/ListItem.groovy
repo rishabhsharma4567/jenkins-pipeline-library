@@ -41,7 +41,7 @@ class ListItem implements List, Item, Serializable {
       if (this.size() == 0) {
         return 0 // 1-0 = 1- (normalize) = 1
       }
-      Item first = get(0);
+      Item first = get(0)
       return first.compareTo(null)
     }
     switch (item.getType()) {
@@ -83,12 +83,12 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean isNull() {
-    return (size() == 0)
+    return (this.size() == 0)
   }
 
   @NonCPS
   void normalize() {
-    for (int i = size() - 1; i >= 0; i--) {
+    for (int i = this.size() - 1; i >= 0; i--) {
       Item lastItem = get(i)
 
       if (lastItem.isNull()) {
