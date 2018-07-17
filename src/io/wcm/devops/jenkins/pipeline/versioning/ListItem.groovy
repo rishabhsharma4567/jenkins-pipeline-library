@@ -43,7 +43,7 @@ class ListItem implements List, Item, Serializable {
       if (this.list.size() == 0) {
         return 0 // 1-0 = 1- (normalize) = 1
       }
-      Item first = get(0)
+      Item first = this.list.get(0)
       return first.compareTo(null)
     }
     switch (item.getType()) {
@@ -54,7 +54,7 @@ class ListItem implements List, Item, Serializable {
         return 1 // 1-1 > 1-sp
 
       case LIST_ITEM:
-        Iterator<Item> left = iterator()
+        Iterator<Item> left = this.list.iterator()
         Iterator<Item> right = ((ListItem) item).iterator()
 
         while (left.hasNext() || right.hasNext()) {
