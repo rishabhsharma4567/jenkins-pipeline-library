@@ -144,6 +144,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
+    String test = this.list.join(",")
     return 0
   }
 
