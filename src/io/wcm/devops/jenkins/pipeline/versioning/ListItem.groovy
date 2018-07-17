@@ -93,7 +93,7 @@ class ListItem implements List, Item, Serializable {
 
       if (lastItem.isNull()) {
         // remove null trailing items: 0, "", empty list
-        ListUtils.removeAt(list, i)
+        ListUtils.removeAt(this.list, i)
       } else if (!(isListItem(lastItem))) {
         break
       }
@@ -144,7 +144,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
-    return list.size()
+    return this.list.size()
   }
 
   /**
@@ -153,7 +153,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean isEmpty() {
-    return list.isEmpty()
+    return this.list.isEmpty()
   }
 
   /**
@@ -162,7 +162,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean contains(Object o) {
-    return list.contains(o)
+    return this.list.contains(o)
   }
 
   /**
@@ -171,7 +171,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Iterator iterator() {
-    return list.iterator()
+    return this.list.iterator()
   }
 
   /**
@@ -180,7 +180,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object[] toArray() {
-    return list.toArray()
+    return this.list.toArray()
   }
 
   /**
@@ -189,7 +189,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean add(Object o) {
-    return list.add(o)
+    return this.list.add(o)
   }
 
   /**
@@ -198,7 +198,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean remove(Object o) {
-    return list.remove(o)
+    return this.list.remove(o)
   }
 
   /**
@@ -207,7 +207,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean addAll(Collection c) {
-    return list.addAll(c)
+    return this.list.addAll(c)
   }
 
   /**
@@ -216,7 +216,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean addAll(int index, Collection c) {
-    return list.addAll(index, c)
+    return this.list.addAll(index, c)
   }
 
   /**
@@ -225,7 +225,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   void clear() {
-    list.clear()
+    this.list.clear()
   }
 
   /**
@@ -234,7 +234,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object get(int index) {
-    return list.get(index)
+    return this.list.get(index)
   }
 
   /**
@@ -243,7 +243,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object set(int index, Object element) {
-    return list.set(index, element)
+    return this.list.set(index, element)
   }
 
   /**
@@ -252,7 +252,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   void add(int index, Object element) {
-    list.add(index, element)
+    this.list.add(index, element)
   }
 
   /**
@@ -261,7 +261,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object remove(int index) {
-    return list.remove(index)
+    return this.list.remove(index)
   }
 
   /**
@@ -270,7 +270,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int indexOf(Object o) {
-    return list.indexOf(o)
+    return this.list.indexOf(o)
   }
 
   /**
@@ -279,7 +279,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int lastIndexOf(Object o) {
-    return list.lastIndexOf(o)
+    return this.list.lastIndexOf(o)
   }
 
   /**
@@ -288,7 +288,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   ListIterator listIterator() {
-    return list.listIterator()
+    return this.list.listIterator()
   }
 
   /**
@@ -297,7 +297,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   ListIterator listIterator(int index) {
-    return list.listIterator(index)
+    return this.list.listIterator(index)
   }
 
   /**
@@ -306,7 +306,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   List subList(int fromIndex, int toIndex) {
-    return list.subList(fromIndex, toIndex)
+    return this.list.subList(fromIndex, toIndex)
   }
 
   /**
@@ -315,7 +315,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean retainAll(Collection c) {
-    return list.retainAll(c)
+    return this.list.retainAll(c)
   }
 
   /**
@@ -324,7 +324,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean removeAll(Collection c) {
-    return list.removeAll(c)
+    return this.list.removeAll(c)
   }
 
   /**
@@ -333,7 +333,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean containsAll(Collection c) {
-    return list.containsAll(c)
+    return this.list.containsAll(c)
   }
 
   /**
@@ -342,6 +342,6 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object[] toArray(Object[] a) {
-    return list.toArray(a)
+    return this.list.toArray(a)
   }
 }
