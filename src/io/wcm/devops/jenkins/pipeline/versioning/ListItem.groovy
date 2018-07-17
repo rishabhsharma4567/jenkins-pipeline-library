@@ -38,7 +38,7 @@ class ListItem implements List, Item, Serializable {
   @NonCPS
   int compareTo(Item item) {
     if (item == null) {
-      if (size() == 0) {
+      if (this.size() == 0) {
         return 0 // 1-0 = 1- (normalize) = 1
       }
       Item first = get(0);
@@ -144,6 +144,11 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
+    return this.internalSize()
+  }
+
+  @NonCPS
+  int internalSize() {
     return this.list.size()
   }
 
