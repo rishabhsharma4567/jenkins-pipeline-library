@@ -34,6 +34,8 @@ class ListItem implements List, Item, Serializable {
 
   ArrayList<Item> list = []
 
+  int listSize = 0
+
   @Override
   @NonCPS
   int compareTo(Item item) {
@@ -144,7 +146,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   int size() {
-    return this.list.size()
+    return listSize
   }
 
   /**
@@ -189,7 +191,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean add(Object o) {
-    return this.list.add(o)
+    Boolean ret = this.list.add(o)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -198,7 +202,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean remove(Object o) {
-    return this.list.remove(o)
+    Boolean ret = this.list.remove(o)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -207,7 +213,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean addAll(Collection c) {
-    return this.list.addAll(c)
+    Boolean ret = this.list.addAll(c)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -216,7 +224,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean addAll(int index, Collection c) {
-    return this.list.addAll(index, c)
+    Boolean ret = this.list.addAll(index, c)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -225,6 +235,7 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   void clear() {
+    listSize=0
     this.list.clear()
   }
 
@@ -253,6 +264,7 @@ class ListItem implements List, Item, Serializable {
   @NonCPS
   void add(int index, Object element) {
     this.list.add(index, element)
+    listSize = this.list.size()
   }
 
   /**
@@ -261,7 +273,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   Object remove(int index) {
-    return this.list.remove(index)
+    Boolean ret = this.list.remove(index)
+    this.listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -315,7 +329,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean retainAll(Collection c) {
-    return this.list.retainAll(c)
+    Boolean ret = this.list.retainAll(c)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
@@ -324,7 +340,9 @@ class ListItem implements List, Item, Serializable {
   @Override
   @NonCPS
   boolean removeAll(Collection c) {
-    return this.list.removeAll(c)
+    Boolean ret = this.list.removeAll(c)
+    listSize = this.list.size()
+    return ret
   }
 
   /**
